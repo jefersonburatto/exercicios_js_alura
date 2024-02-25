@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript no Navegador</title>
+</head>
+<body>
+
+  <script>
+// Função para remover a acentuação de uma string
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// Loop para garantir que o usuário insira um dia válido da semana
+while (true) {
+  // Perguntar ao usuário qual é o dia da semana
+  var entradaUsuario = prompt("Qual é o dia da semana?");
+
+  // Remover a acentuação da entrada do usuário e converter para minúsculas
+  primeiroTermo = removerAcentos(entradaUsuario.toLowerCase()).split("-")[0];
+
+    // Verificar se é sábado, domingo ou outro dia da semana
+  if (primeiroTermo === "sabado" || primeiroTermo === "sábado") {
+      alert("Bom fim de semana!");
+  } else if (primeiroTermo === "domingo") {
+      alert("Bom fim de semana!");
+  } else if (primeiroTermo === "segunda" || primeiroTermo === "terca" || primeiroTermo === "terça" ||
+             primeiroTermo === "quarta" || primeiroTermo === "quinta" || primeiroTermo === "sexta") {
+      alert("Boa semana!");
+        break; // Sair do loop se a entrada do usuário for válida
+  } else {
+      alert("Por favor, insira um dia da semana válido.");
+  }
+}
+
+  </script>
+
+</body>
+</html>
